@@ -40,6 +40,6 @@ def health_check():
     return {"status": "healthy"}
 
 
-app.include_router(auth_router,prefix="/v1/users")
+app.include_router(auth_router,prefix="/api/v1/users")
 
 
