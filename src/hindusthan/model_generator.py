@@ -267,9 +267,7 @@ async def get_all_{snake_name}s(skip: int = 0, limit: int = 10):
     return {snake_name}s
 
 # GET {snake_name} by ID
-@router.get("/{{
-
-}}", response_model={camel_name}Response,status_code=status.HTTP_200_OK)
+@router.get("/{{id}}", response_model={camel_name}Response,status_code=status.HTTP_200_OK)
 async def get_{snake_name}(id: str):
     {chr(10)}    {chr(34)}{chr(34)}{chr(34)}
     Get {snake_name} by ID

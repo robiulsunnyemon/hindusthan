@@ -4,6 +4,7 @@ from typing import Optional
 import os
 
 from src.hindusthan.auth.models.user_model import UserModel, OTPModel
+from src.hindusthan.customer.models.customer_model import CustomerModel
 
 # MongoDB connection settings
 # MongoDB connection settings
@@ -25,7 +26,8 @@ async def initialize_database():
         database=client[DATABASE_NAME], # type: ignore
         document_models=[
             UserModel,
-            OTPModel
+            OTPModel,
+            CustomerModel
 
         ],
     )

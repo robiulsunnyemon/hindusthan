@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from src.hindusthan.database.database import initialize_database, close_database
 from fastapi.middleware.cors import CORSMiddleware
 from src.hindusthan.auth.routers.user_routes import router as auth_router
-
+from src.hindusthan.customer.routers.customer_routes import router as customer_router
 @asynccontextmanager
 async def lifespan_context(_: FastAPI):
     await initialize_database()
@@ -41,5 +41,6 @@ def health_check():
 
 
 app.include_router(auth_router,prefix="/api/v1/users")
+app.include_router(customer_router,prefix="/api/v1")
 
 
