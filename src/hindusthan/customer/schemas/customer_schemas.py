@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel,EmailStr
 from typing import Optional
 from datetime import datetime
 
@@ -9,7 +9,7 @@ class CustomerCreate(BaseModel):
     last_name: str
     nick_name: str
     phone_number: str
-    email: str
+    email: EmailStr
     district: str
     mandal: str
     village: str
@@ -32,7 +32,7 @@ class CustomerUpdate(BaseModel):
     last_name: Optional[str] = None
     nick_name: Optional[str] = None
     phone_number: Optional[str] = None
-    email: Optional[str] = None
+    email: Optional[EmailStr] = None
     district: Optional[str] = None
     mandal: Optional[str] = None
     village: Optional[str] = None
@@ -56,7 +56,7 @@ class CustomerResponse(BaseModel):
     last_name: str
     nick_name: str
     phone_number: str
-    email: str
+    email: EmailStr
     district: str
     mandal: str
     village: str

@@ -1,6 +1,6 @@
 from beanie import Document, before_event, Replace, Save
 from datetime import datetime, timezone
-from pydantic import Field
+from pydantic import Field,EmailStr
 import uuid
 
 
@@ -11,7 +11,7 @@ class CustomerModel(Document):
     last_name: str = ""
     nick_name: str = ""
     phone_number: str = ""
-    email: str = ""
+    email: EmailStr = "default@gmail.com"
     district: str = ""
     mandal: str = ""
     village: str = ""

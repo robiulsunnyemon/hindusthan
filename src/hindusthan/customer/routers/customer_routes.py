@@ -27,6 +27,8 @@ async def get_customer(id: str):
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Customer not found")
     return customer
 
+
+
 # POST create new customer
 @router.post("/", response_model=CustomerResponse,status_code=status.HTTP_201_CREATED)
 async def create_customer(customer_data: CustomerCreate):
